@@ -1,0 +1,77 @@
+@page "/vod/{Channel}"
+
+@* <VODTopBar></VODTopBar> *@
+
+<AgraTV.Pages.Contols.SideMenu_VOD></AgraTV.Pages.Contols.SideMenu_VOD>
+
+<a href="@URL">
+    <div style="padding-left: 40%; background-color: #0c0f194a; font-size: 3em; ">
+
+        Watch past programs of @Channel
+    </div>
+</a>
+
+
+@code {
+    [Parameter]
+    public string Channel { get; set; }
+
+    public string URL
+    {
+        get
+        {
+            switch (Channel)
+            {
+                case "derana":
+                    return "https://www.youtube.com/c/AdaDeranaNews/videos";
+
+                case "hiru":
+                    return "https://www.youtube.com/c/HiruTVOfficial/videos";
+
+                case "rup":
+                    return "https://www.youtube.com/c/SriLankaRupavahinitv/videos";
+
+                case "siyatha":
+                    return "https://www.youtube.com/c/SiyathaTVonline/videos";
+
+                case "swarna":
+                    return "https://www.youtube.com/c/swarnavahinitv/videos";
+
+                case "itn":
+                    return "https://www.youtube.com/c/ITNSriLanka/videos";
+
+                case "sirasa":
+                    return "https://www.youtube.com/c/SirasaTVSrilanka/videos";
+
+                case "kandula":
+                    return "https://www.youtube.com/user/Dahampahana/videos";
+
+                case "veritasium":
+                    return "https://www.youtube.com/c/veritasium/videos";
+
+                case "brightside":
+                    return "https://www.youtube.com/c/BRIGHTSIDEOFFICIAL/videos";
+
+                case "wbkids":
+                    return "https://www.youtube.com/c/wbkids/videos";
+
+                case "pinkpanther":
+                    return "https://www.youtube.com/user/PinkPanther/videos";
+
+                case "bean":
+                    return "https://www.youtube.com/user/MrBean/videos";
+
+                case "tissa":
+                    return "https://www.youtube.com/channel/UClTtyoE-ykzNTd0pAxE59Ow";
+
+                //case "":
+                // return "";
+
+                default:
+                    Channel = "";
+                    return "/";
+            }
+        }
+    }
+
+}
